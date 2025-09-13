@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
-  // Allowed users
   const validUsers = [
     { username: "krishna@gmail.com", password: "1234" },
     { username: "vyshnavi", password: "12345" }
@@ -17,7 +18,7 @@ export default function LoginPage() {
     );
 
     if (foundUser) {
-      setMessage(`✅ Welcome, ${username}! You are logged in.`);
+      navigate("/admin"); // redirect
     } else {
       setMessage("❌ Invalid username or password. Try again.");
     }
@@ -44,7 +45,6 @@ export default function LoginPage() {
       <br /><br />
 
       <button onClick={handleLogin}>Login</button>
-
       {message && <p>{message}</p>}
     </div>
   );
