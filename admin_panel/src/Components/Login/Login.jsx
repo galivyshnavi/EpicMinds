@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Login.css"; 
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -8,7 +9,7 @@ export default function LoginPage() {
   // Allowed users
   const validUsers = [
     { username: "krishna@gmail.com", password: "1234" },
-    { username: "vyshnavi", password: "12345" }
+    { username: "vyshnavi", password: "12345" },
   ];
 
   const handleLogin = () => {
@@ -24,28 +25,36 @@ export default function LoginPage() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Login Page</h2>
+    <div className="login-container">
+      <div className="login-box">
+        <h2 className="login-title">USER LOGIN</h2>
 
-      <input
-        type="text"
-        placeholder="Enter Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <br /><br />
+        <div className="input-container">
+          <span className="icon">👤</span>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br /><br />
+        <div className="input-container">
+          <span className="icon">🔒</span>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-      <button onClick={handleLogin}>Login</button>
+        <button className="login-btn" onClick={handleLogin}>
+          LOGIN
+        </button>
 
-      {message && <p>{message}</p>}
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
   );
 }

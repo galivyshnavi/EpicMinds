@@ -1,0 +1,82 @@
+/* Background */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d2b36; /* Dark teal background */
+  font-family: Arial, sans-serif;
+}
+
+/* Login box */
+.login-box {
+  background: transparent;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+}
+
+/* Title */
+.login-title {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Input wrapper */
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #333;
+}
+
+/* Input fields */
+.input-container input {
+  width: 100%;
+  padding: 12px 40px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
+}
+
+.input-container input::placeholder {
+  color: #ddd;
+}
+
+/* Button */
+.login-btn {
+  width: 70%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #0d2b36;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #f1f1f1;
+}
+
+/* Message */
+.message {
+  margin-top: 15px;
+  color: #fff;
+  font-weight: bold;
+}
