@@ -13,7 +13,7 @@ export default function Admin() {
       password: `pass${people.length + 1}`,
     };
     setPeople([...people, newPerson]);
-    navigate("/people"); // redirect to People page
+    navigate("/people"); 
   };
 
   const handleAddFile = () => {
@@ -22,7 +22,7 @@ export default function Admin() {
       filename: `File${files.length + 1}.txt`,
     };
     setFiles([...files, newFile]);
-    navigate("/file"); // redirect to File page
+    navigate("/file");
   };
 
   return (
