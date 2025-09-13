@@ -2,12 +2,15 @@ import { useState } from 'react'
 
 import LoginPage from './Components/Login/Login'
 import './App.css'
-import Layout from './Components/Sample/Layout'
+import Admin from './Components/Admin/admin'
+
 
 function App() {
   return(
-    <LoginPage/>
-   
+    <div>
+      <LoginPage/>
+      <Admin/>
+    </div>
   )
 }
 
