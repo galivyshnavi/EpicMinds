@@ -10,6 +10,7 @@ export default function LoginPage() {
   const validUsers = [
     { username: "krishna@gmail.com", password: "1234" },
     { username: "vyshnavi", password: "12345" },
+    { username: "admin", password: "admin" },
   ];
 
   const handleLogin = () => {
@@ -52,6 +53,11 @@ export default function LoginPage() {
         <button className="login-btn" onClick={handleLogin}>
           LOGIN
         </button>
+           <div className="forgot-password">
+          <a href="#" onClick={() => setMessage("🔑 Please contact admin to reset your password.")}>
+            Forgot Password?
+          </a>
+        </div>
 
         {message && <p className="message">{message}</p>}
       </div>

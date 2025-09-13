@@ -1,0 +1,63 @@
+/* App.css */
+
+body { 
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+.forgot-password {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.forgot-password a {
+  color: #0984e3;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+
+.forgot-password a:hover {
+  color: #74b9ff;
+  text-decoration: underline;
+}
+.app-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #2d3436;
+}
+
+.button {
+  background-color: #0984e3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background-color: #74b9ff;
+}
+
+.card {
+  background: #f1f2f6;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
