@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import "./Login.css"; 
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate();
 
+  // Allowed users
   const validUsers = [
     { username: "krishna@gmail.com", password: "1234" },
-    { username: "vyshnavi", password: "12345" }
+    { username: "vyshnavi", password: "12345" },
+    { username: "admin", password: "admin" },
   ];
 
   const handleLogin = () => {
@@ -18,34 +19,48 @@ export default function LoginPage() {
     );
 
     if (foundUser) {
-      navigate("/admin"); // redirect
+      setMessage(`✅ Welcome, ${username}! You are logged in.`);
     } else {
       setMessage("❌ Invalid username or password. Try again.");
     }
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>Login Page</h2>
+    <div className="login-container">
+      <div className="login-box">
+        <h2 className="login-title">USER LOGIN</h2>
 
-      <input
-        type="text"
-        placeholder="Enter Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <br /><br />
+        <div className="input-container">
+          <span className="icon">👤</span>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br /><br />
+        <div className="input-container">
+          <span className="icon">🔒</span>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-      <button onClick={handleLogin}>Login</button>
-      {message && <p>{message}</p>}
+        <button className="login-btn" onClick={handleLogin}>
+          LOGIN
+        </button>
+           <div className="forgot-password">
+          <a href="#" onClick={() => setMessage("🔑 Please contact admin to reset your password.")}>
+            Forgot Password?
+          </a>
+        </div>
+
+        {message && <p className="message">{message}</p>}
+      </div>
     </div>
   );
 }
