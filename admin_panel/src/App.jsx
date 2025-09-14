@@ -7,8 +7,11 @@ import Admin from './Components/Admin/admin'
 
 function App() {
   return(
-    <LoginPage/>
+    <div>
+       <LoginPage/>
      <Admin/>
+    </div>
+   
    
   )
 }
